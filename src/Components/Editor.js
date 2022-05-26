@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CodeBlock, dracula } from "react-code-blocks";
 import FilterData from './FilterData';
+import logo from '../Images/logo.avif'
 
 const Editor = (props) => {
 
@@ -9,7 +10,6 @@ const Editor = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log(query)
         setSubmitQuery(query);
     } 
 
@@ -25,30 +25,30 @@ const Editor = (props) => {
         {
          label : "select * from customers where country= 'Mexico'",
          value: 3
-        }
+        },
      ]
 
     return (
         <div>
-            <div style={{backgroundColor: '#282a36'}} className='h-96 overflow-hidden text-base'>
+            <div style={{backgroundColor: '#282a36'}} className='h-[35vh] overflow-hidden text-base'>
                 <CodeBlock
-                    className="w-full h-96"
+                    className="w-full"
                     text={query}
                     language="sql"
                     showLineNumbers="5"
                     theme={dracula}
                 />
             </div>
-            <div>
+            <div className='px-2 overflow-y-scroll h-[53vh] '>
                 {queries.map(query => (
-                    <button className='w-full hover:bg-green-400 py-4 border-2' key={query.value} onClick={() => {
+                    <button className='w-full border bg-slate-300 hover:bg-white border-slate-300 text-left py-2 px-2 my-1 font-medium rounded-sm text-base truncate' key={query.value} onClick={() => {
                         setQuery(query.label);
                         setSubmitQuery(query.value);
                         props.parentData(query.value);
-                    }}>{query.label}</button>
+                    }}><i className="fa-solid fa-play"></i><span className='ml-2'>{query.label}</span></button>
                 ))}
             </div>
-            {/* <FilterData query={submitQuery} /> */}
+            <div className='w-full pt-1 font-bold text-blue-500 flex items-center justify-center'><span>Made for </span><img src={logo} className='h-5 ml-2'/></div>
         </div>
     )
 }
