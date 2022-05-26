@@ -1,5 +1,4 @@
-export default {
-    Customer:
+export const Customer =
     [
         {
           "customerID" : "AROUT",
@@ -1276,4 +1275,3 @@ export default {
           }
         }
       ]
-}

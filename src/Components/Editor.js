@@ -12,21 +12,39 @@ const Editor = (props) => {
         e.preventDefault();
         setSubmitQuery(query);
     } 
+    let queries;
+    if(!props.showEmployees){
+        queries = [
+            {
+             label : "select * from customers",
+             value: 1
+            },
+            {
+             label : "select * from customers where contactTitle= 'Owner'",
+             value: 2
+            },
+            {
+             label : "select * from customers where country= 'Mexico'",
+             value: 3
+            },
+         ]
+    } else{
+        queries = [
+            {
+             label : "select * from products",
+             value: 1
+            },
+            {
+             label : "select * from products where productName= 'Chai'",
+             value: 2
+            },
+            {
+             label : "select * from products where supplierID= 1",
+             value: 3
+            },
+         ]
+    }
 
-    const queries = [
-        {
-         label : "select * from customers",
-         value: 1
-        },
-        {
-         label : "select * from customers where contactTitle= 'Owner'",
-         value: 2
-        },
-        {
-         label : "select * from customers where country= 'Mexico'",
-         value: 3
-        },
-     ]
 
     return (
         <div>

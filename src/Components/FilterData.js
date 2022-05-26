@@ -1,6 +1,9 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 
 function FilterData(props){
+
+  const [ showEmployees, setShowEmployees ] = useState(false);
+  
 
   const customers = [        
     {
@@ -25,111 +28,248 @@ function FilterData(props){
     "country" : "Sweden",
     "phone" : "0921-12 34 65",
     },
-{
-"customerID" : "BLAUS",
-"companyName" : "Blauer See Delikatessen",
-"contactName" : "Hanna Moos",
-"contactTitle" : "Sales Representative",
-"address" :  "Forsterstr. 57",
-"city" : "Mannheim",
-"postalCode" : "68306",
-"country" : "Germany",
-"phone" : "0621-08460",
-},
-{
-"customerID" : "BLONP",
-"companyName" : "Blondesddsl père et fils",
-"contactName" : "Frédérique Citeaux",
-"contactTitle" : "Marketing Manager",
-"address" :  "24 place Kléber",
-"city" : "Strasbourg",
+    {
+    "customerID" : "BLAUS",
+    "companyName" : "Blauer See Delikatessen",
+    "contactName" : "Hanna Moos",
+    "contactTitle" : "Sales Representative",
+    "address" :  "Forsterstr. 57",
+    "city" : "Mannheim",
+    "postalCode" : "68306",
+    "country" : "Germany",
+    "phone" : "0621-08460",
+    },
+    {
+    "customerID" : "BLONP",
+    "companyName" : "Blondesddsl père et fils",
+    "contactName" : "Frédérique Citeaux",
+    "contactTitle" : "Marketing Manager",
+    "address" :  "24 place Kléber",
+    "city" : "Strasbourg",
 
-"postalCode" : "67000",
-"country" : "France",
-"phone" : "88.60.15.31",
-
-
-
-},
-{
-"customerID" : "BOLID",
-"companyName" : "Bólido Comidas preparadas",
-"contactName" : "Martín Sommer",
-"contactTitle" : "Owner",
-"address" :  "67C Araquil",
-"city" : "Madrid",
-
-"postalCode" : 28023,
-"country" : "Spain",
-"phone" : "(91) 555 22 82",
+    "postalCode" : "67000",
+    "country" : "France",
+    "phone" : "88.60.15.31",
 
 
 
-},
-{
-"customerID" : "BONAP",
-"companyName" : "Bon app'",
-"contactName" : "Laurence Lebihan",
-"contactTitle" : "Owner",
-"address" :  "12 rue des Bouchers",
-"city" : "Marseille",
+    },
+    {
+    "customerID" : "BOLID",
+    "companyName" : "Bólido Comidas preparadas",
+    "contactName" : "Martín Sommer",
+    "contactTitle" : "Owner",
+    "address" :  "67C Araquil",
+    "city" : "Madrid",
 
-"postalCode" : 13008,
-"country" : "France",
-"phone" : "91.24.45.40",
-
-
-
-},
-{
-"customerID" : "ANTON",
-"companyName" : "Antonio Moreno Taquería",
-"contactName" : "Antonio Moreno",
-"contactTitle" : "Owner",
-"address" :  "Mataderos  2312",
-"city" : "México D.F.",
-
-"postalCode" : 5023,
-"country" : "Mexico",
-"phone" : "(5) 555-3932",
+    "postalCode" : 28023,
+    "country" : "Spain",
+    "phone" : "(91) 555 22 82",
 
 
 
-},
-{
-"customerID" : "ANATR",
-"companyName" : "Ana Trujillo Emparedados y helados",
-"contactName" : "Ana Trujillo",
-"contactTitle" : "Owner",
-"address" :  "Avda. de la Constitución 2222",
-"city" : "México D.F.",
+    },
+    {
+    "customerID" : "BONAP",
+    "companyName" : "Bon app'",
+    "contactName" : "Laurence Lebihan",
+    "contactTitle" : "Owner",
+    "address" :  "12 rue des Bouchers",
+    "city" : "Marseille",
 
-"postalCode" : 5021,
-"country" : "Mexico",
-"phone" : "(5) 555-4729",
-
-
-
-},
-{
-"customerID" : "CACTU",
-"companyName" : "Cactus Comidas para llevar",
-"contactName" : "Patricio Simpson",
-"contactTitle" : "Sales Agent",
-"address" :  "Cerrito 333",
-"city" : "Buenos Aires",
-
-"postalCode" : 1010,
-"country" : "Argentina",
-"phone" : "(1) 135-5555",
+    "postalCode" : 13008,
+    "country" : "France",
+    "phone" : "91.24.45.40",
 
 
 
-},
+    },
+    {
+    "customerID" : "ANTON",
+    "companyName" : "Antonio Moreno Taquería",
+    "contactName" : "Antonio Moreno",
+    "contactTitle" : "Owner",
+    "address" :  "Mataderos  2312",
+    "city" : "México D.F.",
+
+    "postalCode" : 5023,
+    "country" : "Mexico",
+    "phone" : "(5) 555-3932",
+
+
+
+    },
+    {
+    "customerID" : "ANATR",
+    "companyName" : "Ana Trujillo Emparedados y helados",
+    "contactName" : "Ana Trujillo",
+    "contactTitle" : "Owner",
+    "address" :  "Avda. de la Constitución 2222",
+    "city" : "México D.F.",
+
+    "postalCode" : 5021,
+    "country" : "Mexico",
+    "phone" : "(5) 555-4729",
+
+
+
+    },
+    {
+    "customerID" : "CACTU",
+    "companyName" : "Cactus Comidas para llevar",
+    "contactName" : "Patricio Simpson",
+    "contactTitle" : "Sales Agent",
+    "address" :  "Cerrito 333",
+    "city" : "Buenos Aires",
+
+    "postalCode" : 1010,
+    "country" : "Argentina",
+    "phone" : "(1) 135-5555",
+
+
+
+    },
     ]
 
-    var data = customers
-    var rows = []
+    const employees = 
+    [
+      {
+        "productID" : 4,
+        "supplierID" : 2,
+        "categoryID" : 2,
+        "quantityPerUnit" : "48 - 6 oz jars",
+        "unitPrice" : 22,
+        "unitsInStock" : 53,
+        "unitsOnOrder" : 0,
+        "reorderLevel" : 0,
+        "discontinued" : "false",
+        "name" : "Chef Anton's Cajun Seasoning"
+      },
+      {
+        "productID" : 5,
+        "supplierID" : 2,
+        "categoryID" : 2,
+        "quantityPerUnit" : "36 boxes",
+        "unitPrice" : 21.35,
+        "unitsInStock" : 0,
+        "unitsOnOrder" : 0,
+        "reorderLevel" : 0,
+        "discontinued" : "true",
+        "name" : "Chef Anton's Gumbo Mix"
+      },
+      {
+        "productID" : 6,
+        "supplierID" : 3,
+        "categoryID" : 2,
+        "quantityPerUnit" : "12 - 8 oz jars",
+        "unitPrice" : 25,
+        "unitsInStock" : 120,
+        "unitsOnOrder" : 0,
+        "reorderLevel" : 25,
+        "discontinued" : "false",
+        "name" : "Grandma's Boysenberry Spread"
+      },
+      {
+        "productID" : 7,
+        "supplierID" : 3,
+        "categoryID" : 7,
+        "quantityPerUnit" : "12 - 1 lb pkgs.",
+        "unitPrice" : 30,
+        "unitsInStock" : 15,
+        "unitsOnOrder" : 0,
+        "reorderLevel" : 10,
+        "discontinued" : "false",
+        "name" : "Uncle Bob's Organic Dried Pears"
+      },
+      {
+        "productID" : 8,
+        "supplierID" : 3,
+        "categoryID" : 2,
+        "quantityPerUnit" : "12 - 12 oz jars",
+        "unitPrice" : 40,
+        "unitsInStock" : 6,
+        "unitsOnOrder" : 0,
+        "reorderLevel" : 0,
+        "discontinued" : "false",
+        "name" : "Northwoods Cranberry Sauce"
+      },
+      {
+        "productID" : 9,
+        "supplierID" : 4,
+        "categoryID" : 6,
+        "quantityPerUnit" : "18 - 500 g pkgs.",
+        "unitPrice" : 97,
+        "unitsInStock" : 29,
+        "unitsOnOrder" : 0,
+        "reorderLevel" : 0,
+        "discontinued" : "true",
+        "name" : "Mishi Kobe Niku"
+      },
+      {
+        "productID" : 10,
+        "supplierID" : 4,
+        "categoryID" : 8,
+        "quantityPerUnit" : "12 - 200 ml jars",
+        "unitPrice" : 31,
+        "unitsInStock" : 31,
+        "unitsOnOrder" : 0,
+        "reorderLevel" : 0,
+        "discontinued" : "false",
+        "name" : "Ikura"
+      },
+      {
+        "productID" : 2,
+        "supplierID" : 1,
+        "categoryID" : 1,
+        "quantityPerUnit" : "24 - 12 oz bottles",
+        "unitPrice" : 19,
+        "unitsInStock" : 17,
+        "unitsOnOrder" : 40,
+        "reorderLevel" : 25,
+        "discontinued" : "false",
+        "name" : "Chang"
+      },
+      {
+        "productID" : 3,
+        "supplierID" : 1,
+        "categoryID" : 2,
+        "quantityPerUnit" : "12 - 550 ml bottles",
+        "unitPrice" : 10,
+        "unitsInStock" : 13,
+        "unitsOnOrder" : 70,
+        "reorderLevel" : 25,
+        "discontinued" : "false",
+        "name" : "Aniseed Syrup"
+      },
+      {
+        "productID" : 11,
+        "supplierID" : 5,
+        "categoryID" : 4,
+        "quantityPerUnit" : "1 kg pkg.",
+        "unitPrice" : 21,
+        "unitsInStock" : 22,
+        "unitsOnOrder" : 30,
+        "reorderLevel" : 30,
+        "discontinued" : "false",
+        "name" : "Queso Cabrales"
+      },
+      {
+        "productID" : 12,
+        "supplierID" : 5,
+        "categoryID" : 4,
+        "quantityPerUnit" : "10 - 500 g pkgs.",
+        "unitPrice" : 38,
+        "unitsInStock" : 86,
+        "unitsOnOrder" : 0,
+        "reorderLevel" : 0,
+        "discontinued" : "false",
+        "name" : "Queso Manchego La Pastora"
+      },
+    ]
+
+    if(!props.showEmployees){
+      var data = customers
+      var rows = []
 
     if(props.query === 1){
       rows = customers
@@ -138,7 +278,7 @@ function FilterData(props){
       for(let i =0; i<data.length; i++){
         if(data[i].contactTitle === 'Owner'){
           rows.push(data[i])
-          console.log(rows)
+          //console.log(rows)
         }
       }
     }
@@ -146,27 +286,56 @@ function FilterData(props){
       for(let i =0; i<data.length; i++){
         if(data[i].country === 'Mexico'){
           rows.push(data[i])
-          console.log(rows)
+          //console.log(rows)
+        }
+      }
+    }
+    }
+    else{
+      var data = employees
+      var rows = []
+
+      if(props.query === 1){
+        rows = employees
+      }
+      else if(props.query === 2){
+        for(let i =0; i<data.length; i++){
+          if(data[i].discontinued === 'true'){
+            rows.push(data[i])
+            //console.log(rows)
+          }
+        }
+      }
+      else if(props.query === 3){
+        for(let i =0; i<data.length; i++){
+          if(data[i].unitsOnOrder === 70){
+            rows.push(data[i])
+            //console.log(rows)
+          }
         }
       }
     }
 
+    
+
   return (
-    <table className='table-fixed border-collapse text-xs'>
-      <thead>
-        <tr>
-          <th className='border border-slate-600 text-center '>Customer ID</th>
-          <th className='border border-slate-600 text-center '>Company Name</th>
-          <th className='border border-slate-600 text-center '>Contact Name</th>
-          <th className='border border-slate-600 text-center '>Contact Title</th>
-          <th className='border border-slate-600 text-center '>Address</th>
-          <th className='border border-slate-600 text-center '>City</th>
-          <th className='border border-slate-600 text-center '>Postal Code</th>
-          <th className='border border-slate-600 text-center '>Country</th>
-          <th className='border border-slate-600 text-center '>Phone</th>
-        </tr>
-      </thead>
-      <tbody>
+    <div>
+      {!props.showEmployees ?
+        <table className='table-fixed border-collapse text-xs'>
+        <thead>
+          <tr>
+            <th className='border border-slate-600 text-center '>Customer ID</th>
+            <th className='border border-slate-600 text-center '>Company Name</th>
+            <th className='border border-slate-600 text-center '>Contact Name</th>
+            <th className='border border-slate-600 text-center '>Contact Title</th>
+            <th className='border border-slate-600 text-center '>Address</th>
+            <th className='border border-slate-600 text-center '>City</th>
+            <th className='border border-slate-600 text-center '>Postal Code</th>
+            <th className='border border-slate-600 text-center '>Country</th>
+            <th className='border border-slate-600 text-center '>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
         {rows.map(row => (
           <tr key={row.customerID}>
             <td className='border border-slate-700 '>{row.customerID}</td>
@@ -181,7 +350,42 @@ function FilterData(props){
           </tr>
         ))}
       </tbody>
+      </table>
+      :
+      <table className='table-fixed border-collapse text-xs'>
+        <thead>
+          <tr>
+            <th className='border border-slate-600 text-center '>Product ID</th>
+            <th className='border border-slate-600 text-center '>Supplier ID</th>
+            <th className='border border-slate-600 text-center '>Category ID</th>
+            <th className='border border-slate-600 text-center '>Quantity/unit</th>
+            <th className='border border-slate-600 text-center '>Unit Price</th>
+            <th className='border border-slate-600 text-center '>Units In Stock</th>
+            <th className='border border-slate-600 text-center '>Units On Order</th>
+            <th className='border border-slate-600 text-center '>Reorder Level</th>
+            <th className='border border-slate-600 text-center '>Discontinued</th>
+            <th className='border border-slate-600 text-center '>Product Name</th>
+          </tr>
+        </thead>
+      <tbody>
+        {rows.map(row => (
+          <tr key={row.customerID}>
+            <td className='border border-slate-700 '>{row.productID}</td>
+            <td className='border border-slate-700 '>{row.supplierID}</td>
+            <td className='border border-slate-700 '>{row.categoryID}</td>
+            <td className='border border-slate-700 '>{row.quantityPerUnit}</td>
+            <td className='border border-slate-700 '>{row.unitPrice}</td>
+            <td className='border border-slate-700 '>{row.unitsInStock}</td>
+            <td className='border border-slate-700 '>{row.unitsOnOrder}</td>
+            <td className='border border-slate-700 '>{row.reorderLevel}</td>
+            <td className='border border-slate-700 '>{row.discontinued}</td>
+            <td className='border border-slate-700 '>{row.name}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
+    }
+  </div>
   );
 }
 
