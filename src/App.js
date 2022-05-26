@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Editor from './Components/Editor';
+import FilterData from './Components/FilterData';
 
 function App() {
+
+    const [query, setQuery] = useState('');
+
+    const dataPass = (childData) => {
+        setQuery(childData);
+    }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='flex'>
+      <div className='w-1/2'>
+        <Editor parentData={dataPass} />
+      </div>
+      <div>
+        <FilterData query={query}/>
+      </div>
     </div>
   );
 }
