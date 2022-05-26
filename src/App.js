@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Editor from './components/Editor';
-import FilterData from './components/FilterData';
-import Navbar from './components/Navbar';
+import Editor from './Components/Editor';
+import FilterData from './Components/FilterData';
+import Navbar from './Components/Navbar';
 
 function App() {
 
