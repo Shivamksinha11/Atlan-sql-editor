@@ -1,9 +1,39 @@
 import React, { useState } from 'react';
+import { CodeBlock, dracula } from "react-code-blocks";
+import OwnQuery from './OwnQuery';
+
 
 function FilterData(props){
 
-  const [ showEmployees, setShowEmployees ] = useState(false);
+  const [ code, setCode ] = useState('');
+  const [ qno, setQno ] = useState(0);
   
+  const displayQuery = () => {
+    if(code === 'select * from customers'){
+        setQno(1);
+    }
+    else if(code === 'select * from customers where contactTitle= \'Owner\''){
+        setQno(2);
+    }
+    else if(code === 'select * from customers where country= \'Mexico\''){
+        setQno(3);
+    }
+    else if(code === 'select * from customers where contactTitle= \'Owner\' and city=\'Mexico D.F.\''){
+        setQno(4);
+    }
+    else if(code === 'select * from customers where city=\'London\''){
+        setQno(5);
+    }
+    else if(code === 'select * from customers where contactTitle= \'Owner\' or city=\'London\''){
+        setQno(6);
+    }
+    else{
+        setQno(7);
+    }
+  }
+  const handleChange = (e) => {
+    setCode(e.target.value);
+  }
 
   const customers = [        
     {
@@ -290,6 +320,30 @@ function FilterData(props){
         }
       }
     }
+    else if(props.query === 4){
+      for(let i =0; i<data.length; i++){
+        if(data[i].contactTitle === 'Owner' && data[i].city === 'México D.F.'){
+          rows.push(data[i])
+          //console.log(rows)
+        }
+      }
+    }
+    else if(props.query === 5){
+      for(let i =0; i<data.length; i++){
+          if(data[i].city === 'London'){
+            rows.push(data[i])
+            //console.log(rows)
+          }
+      }
+    }
+    else if(props.query === 6){
+      for(let i =0; i<data.length; i++){
+          if(data[i].contactTitle === 'Owner' || data[i].city === 'London'){
+            rows.push(data[i])
+            //console.log(rows)
+          }
+      }
+    }
     }
     else{
       var data = employees
@@ -321,7 +375,7 @@ function FilterData(props){
   return (
     <div>
       {!props.showEmployees ?
-        <table className='table-fixed border-collapse text-xs'>
+        <table className='md:table-fixed border-collapse text-xs'>
         <thead>
           <tr>
             <th className='border border-slate-600 text-center '>Customer ID</th>
@@ -352,7 +406,7 @@ function FilterData(props){
       </tbody>
       </table>
       :
-      <table className='table-fixed border-collapse text-xs'>
+      <table className='md:table-fixed border-collapse text-xs'>
         <thead>
           <tr>
             <th className='border border-slate-600 text-center '>Product ID</th>
@@ -385,6 +439,11 @@ function FilterData(props){
       </tbody>
     </table>
     }
+    <div className='text-2xl my-5 font-semibold text-center bg-gray-600 text-white'>{props.showText}</div>
+    <div className='text-2xl font-semibold'>Write Your Own Query</div>
+    <input className='my-5 w-full border border-slate-700 p-2' type='text' placeholder='select * from customer' onChange={handleChange}/>
+    <button className='mb-5 bg-gray-600 rounded-md text-white py-2 px-6' onClick={displayQuery}>Submit</button>
+    {qno!=0 && <OwnQuery queryNo={qno} customers={customers} />}
   </div>
   );
 }

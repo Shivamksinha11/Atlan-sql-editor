@@ -27,6 +27,18 @@ const Editor = (props) => {
              label : "select * from customers where country= 'Mexico'",
              value: 3
             },
+            // {
+            //  label : "select * from customers where contactTitle= 'Owner' and city='Mexico D.F.'",
+            //  value: 4
+            // },
+            // {
+            //  label : "select * from customers where city='London'",
+            //  value: 5
+            // },
+            // {
+            //  label : "select * from customers where contactTitle= 'Owner' or city='London'",
+            //  value: 6
+            // }
          ]
     } else{
         queries = [
@@ -62,7 +74,7 @@ const Editor = (props) => {
                     <button className='w-full border bg-slate-300 hover:bg-white border-slate-300 text-left py-2 px-2 my-1 font-medium rounded-sm text-base truncate' key={query.value} onClick={() => {
                         setQuery(query.label);
                         setSubmitQuery(query.value);
-                        props.parentData(query.value);
+                        props.parentData(query);
                     }}><i className="fa-solid fa-play"></i><span className='ml-2'>{query.label}</span></button>
                 ))}
             </div>

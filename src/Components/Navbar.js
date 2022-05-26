@@ -15,7 +15,7 @@ const Navbar = (props) => {
   }
 
   return (
-    <div className='w-full flex justify-between items-center px-16 py-2 shadow-lg bg-slate-300'>
+    <div className='w-full flex justify-between items-center px-16 py-2 shadow-lg bg-slate-300 fixed'>
         <div className='px-2 py-1 border-2 border-gray-500 text-base font-semibold'>Atlan SQL Editor</div>
         <div className='flex space-x-4 font-semibold'>
             <div className='cursor-pointer' onClick={toggle2}>Customers</div>
