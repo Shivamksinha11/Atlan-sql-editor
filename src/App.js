@@ -10,7 +10,8 @@ function App() {
 
     const toggle = (data) => {
         setShowEmployees(data);
-        console.log(data);
+        //console.log(data);
+        setQuery('');
     }
 
     const dataPass = (childData) => {

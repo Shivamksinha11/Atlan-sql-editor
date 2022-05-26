@@ -369,7 +369,7 @@ function FilterData(props){
         </thead>
       <tbody>
         {rows.map(row => (
-          <tr key={row.customerID}>
+          <tr key={row.productID}>
             <td className='border border-slate-700 '>{row.productID}</td>
             <td className='border border-slate-700 '>{row.supplierID}</td>
             <td className='border border-slate-700 '>{row.categoryID}</td>
