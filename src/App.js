@@ -5,14 +5,14 @@ import Navbar from './Components/Navbar';
 
 function App() {
 
-    const [query, setQuery] = useState('');
+    const [query, setQuery] = useState(1);
     const [data, setData] = useState('');
     const [ showEmployees, setShowEmployees ] = useState(false);
 
     const toggle = (data) => {
         setShowEmployees(data);
         //console.log(data);
-        setQuery('');
+        setQuery(1);
     }
 
     const dataPass = (childData) => {
