@@ -30,7 +30,7 @@ function App() {
           <Editor showEmployees={showEmployees} parentData={dataPass} />
         </div>
 
-        <div className='w-full md:ml-[510px] mr-5 mt-5'>
+        <div className='w-full mt-20 md:ml-[510px] mr-5'>
           {(query === 1 || query === 2 || query === 3 || query === 4 || query === 5 || query === 6) && <FilterData showEmployees={showEmployees} showText={data} query={query}/> }
         </div>
 
