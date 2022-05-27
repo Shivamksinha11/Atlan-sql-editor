@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 import { CodeBlock, dracula } from "react-code-blocks";
 import OwnQuery from './OwnQuery';
+import * as XLSX from "xlsx";
 
 
 function FilterData(props){
 
   const [ code, setCode ] = useState('');
   const [ qno, setQno ] = useState(0);
+
+
+  const downloadExcel = (data) => {
+    const worksheet = XLSX.utils.json_to_sheet(data);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+    //let buffer = XLSX.write(workbook, { bookType: "xlsx", type: "buffer" });
+    //XLSX.write(workbook, { bookType: "xlsx", type: "binary" });
+    XLSX.writeFile(workbook, "DataSheet.xlsx");
+  };
   
   const displayQuery = () => {
     if(code === 'select * from customers'){
@@ -441,10 +452,11 @@ function FilterData(props){
     </table>
     }
     </div>
-    <div className='text-2xl my-5 font-semibold text-center bg-gray-600 text-white'>{props.showText}</div>
-    <div className='text-2xl font-semibold'>Write Your Own Query</div>
-    <input className='my-5 w-full border border-slate-700 p-2' type='text' placeholder='select * from customer' onChange={handleChange}/>
-    <button className='mb-5 bg-gray-600 rounded-md text-white py-2 px-6' onClick={displayQuery}>Submit</button>
+    <button className='bg-gray-600 px-6 py-2 rounded-md text-white mt-2 ml-2' onClick={downloadExcel.bind(this,rows)}>Export</button>
+    <div className='text-2xl mx-2 my-5 font-semibold text-center bg-gray-600 text-white'>{props.showText}</div>
+    <div className='text-2xl mx-2 font-semibold'>Write Your Own Query</div>
+    <input className='my-5 mx-2 w-full border border-slate-700 p-2' type='text' placeholder='select * from customer' onChange={handleChange}/>
+    <button className='mb-5 mx-2 bg-gray-600 rounded-md text-white py-2 px-6' onClick={displayQuery}>Submit</button>
     {qno!=0 && <OwnQuery queryNo={qno} customers={customers} />}
   </div>
   );
