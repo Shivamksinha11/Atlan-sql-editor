@@ -452,14 +452,14 @@ function FilterData(props){
     </table>
     }
     </div>
-    <button className='bg-gray-600 px-6 py-2 rounded-md text-white mt-2 ml-2' onClick={downloadExcel.bind(this,rows)}>Export</button>
+    {/* <button className='bg-gray-600 px-6 py-2 rounded-md text-white mt-2 ml-2' onClick={downloadExcel.bind(this,rows)}>Export</button>
     <div className='text-2xl mx-2 my-5 font-semibold text-center bg-gray-600 text-white'>{props.showText}</div>
     <div className='mx-2'>
     <div className='text-2xl mx-2 font-semibold'>Write Your Own Query</div>
     <input className='my-5 w-full border border-slate-700 p-2' type='text' placeholder='select * from customer' onChange={handleChange}/>
     </div>
     <button className='mb-5 mx-2 bg-gray-600 rounded-md text-white py-2 px-6' onClick={displayQuery}>Submit</button>
-    {qno!=0 && <OwnQuery queryNo={qno} customers={customers} />}
+    {qno!=0 && <OwnQuery queryNo={qno} customers={customers} />} */}
   </div>
   );
 }
