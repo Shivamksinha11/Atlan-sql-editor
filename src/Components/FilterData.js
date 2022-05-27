@@ -374,9 +374,10 @@ function FilterData(props){
 
   return (
     <div>
+    <div className='mx-2 mr-4 relative overflow-x-auto shadow-md sm:rounded-lg'>
       {!props.showEmployees ?
-        <table className='md:table-fixed border-collapse text-xs'>
-        <thead>
+        <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
+        <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
           <tr>
             <th className='border border-slate-600 text-center '>Customer ID</th>
             <th className='border border-slate-600 text-center '>Company Name</th>
@@ -406,8 +407,8 @@ function FilterData(props){
       </tbody>
       </table>
       :
-      <table className='md:table-fixed border-collapse text-xs'>
-        <thead>
+      <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
+        <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
           <tr>
             <th className='border border-slate-600 text-center '>Product ID</th>
             <th className='border border-slate-600 text-center '>Supplier ID</th>
@@ -439,6 +440,7 @@ function FilterData(props){
       </tbody>
     </table>
     }
+    </div>
     <div className='text-2xl my-5 font-semibold text-center bg-gray-600 text-white'>{props.showText}</div>
     <div className='text-2xl font-semibold'>Write Your Own Query</div>
     <input className='my-5 w-full border border-slate-700 p-2' type='text' placeholder='select * from customer' onChange={handleChange}/>

@@ -69,7 +69,7 @@ const Editor = (props) => {
                     theme={dracula}
                 />
             </div>
-            <div className='px-2 overflow-y-scroll h-[53vh] '>
+            <div className='px-2 overflow-y-scroll md:h-[53vh] '>
                 {queries.map(query => (
                     <button className='w-full border bg-slate-300 hover:bg-white border-slate-300 text-left py-2 px-2 my-1 font-medium rounded-sm text-base truncate' key={query.value} onClick={() => {
                         setQuery(query.label);
@@ -78,7 +78,7 @@ const Editor = (props) => {
                     }}><i className="fa-solid fa-play"></i><span className='ml-2'>{query.label}</span></button>
                 ))}
             </div>
-            <div className='w-full pt-1 font-bold text-blue-500 flex items-center justify-center'><span>Made for </span><img src={logo} className='h-5 ml-2'/></div>
+            <div className='hidden w-full pt-1 font-bold text-blue-500 md:flex items-center justify-center'><span>Made for </span><img src={logo} className='h-5 ml-2'/></div>
         </div>
     )
 }

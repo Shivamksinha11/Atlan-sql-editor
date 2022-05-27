@@ -52,10 +52,10 @@ const OwnQuery = (props) => {
 
 
   return (
-      <div className='mb-5'>
+      <div className='mb-5 ml-2 mr-4 relative overflow-x-auto shadow-md sm:rounded-lg'>
           {rows.length > 0  && 
-    <table className='table-fixed border-collapse text-xs'>
-        <thead>
+    <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
+        <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
           <tr>
             <th className='border border-slate-600 text-center '>Customer ID</th>
             <th className='border border-slate-600 text-center '>Company Name</th>

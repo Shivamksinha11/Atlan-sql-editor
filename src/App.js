@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Editor from './Components/Editor';
 import FilterData from './Components/FilterData';
 import Navbar from './Components/Navbar';
+import logo from './Images/logo.avif'
 
 function App() {
 
@@ -23,16 +24,17 @@ function App() {
   return (
     <>
       <Navbar show={toggle}/>
-      <div className='flex'>
+      <div className='md:flex'>
 
-        <div className='w-[500px] top-[50px] fixed border-r-2 border-gray-400 h-full'>
+        <div className='md:w-[500px] top-[58px] md:fixed border-r-2 border-gray-400'>
           <Editor showEmployees={showEmployees} parentData={dataPass} />
         </div>
 
-        <div className='w-full ml-[510px] mr-5 mt-20'>
+        <div className='w-full md:ml-[510px] mr-5 mt-5'>
           {(query === 1 || query === 2 || query === 3 || query === 4 || query === 5 || query === 6) && <FilterData showEmployees={showEmployees} showText={data} query={query}/> }
         </div>
 
+        <div className='flex w-full pt-1 font-bold text-blue-500 md:hidden items-center justify-center'><span>Made for </span><img src={logo} className='h-5 ml-2'/></div>
       </div>
     </>
   );
