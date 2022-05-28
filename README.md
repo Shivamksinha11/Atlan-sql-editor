@@ -13,8 +13,10 @@ Following technologies were used for the completion of this project:
 
 ## Features :-
 
-    1. The top-most section consists of a navbar which allows the users to easily switch amongst multiple tables (In this case 'Customers' and 'Products')
+    1. The top-most section consists of a navbar which allows the users to easily switch amongst multiple tables 
+       (In this case 'Customers' and 'Products')
 
-    2. The next section contains an editor which displays the current query of the corresponding table put on view. Below this a list of few queries is present from which the user can select a query which they want to execute.
+    2. The next section contains an editor which displays the current query of the corresponding table put on view. Below this
+       a list of few queries is present from which the user can select a query which they want to execute.
 
     3. 
