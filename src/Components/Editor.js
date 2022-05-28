@@ -77,7 +77,7 @@ const Editor = (props) => {
                     }}><i className="fa-solid fa-play"></i><span className='ml-2'>{query.label}</span></button>
                 ))}
             </div>
-            <div className='hidden w-full pt-1 font-bold text-blue-500 md:flex items-center justify-center'><span>Made for </span><img alt="..." src={logo} className='h-5 ml-2'/></div>
+            <div className='hidden w-full pt-1 font-bold text-blue-500 md:flex items-center justify-center'><span>Made for </span><img alt="Atlan" src={logo} className='h-5 ml-2'/></div>
         </div>
     )
 }
