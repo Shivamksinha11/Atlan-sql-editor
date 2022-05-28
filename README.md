@@ -11,6 +11,11 @@ Following technologies were used for the completion of this project:
     1. ReactJs
     2. Tailwind CSS
 
+## Packages used :-
+
+    1. react-code-blocks:
+    2. xlsx
+
 ## Features :-
 
     1. The top-most section consists of a navbar which allows the users to easily switch amongst multiple tables 
@@ -34,6 +39,20 @@ Following technologies were used for the completion of this project:
             f. select * from customers where contactTitle= 'Owner' or city='London'
 
 ## Performance
+
+<img src="https://imgur.com/43AYrhu.png"/>
+
+## Optimization
+
+    1. Didn't use any third party libraries.
+    2. Used only the core features of ReactJs.
+    3. Used only the core features of Tailwind CSS.
+    
+## Project overview
+
+<img src="https://imgur.com/4gNwIxh.png">
+
+<img src="https://imgur.com/VHk4AiY.png" width="45%" height="100%"> <img src="https://imgur.com/B4cO3u5.png" style="margin-left: 5%" width="45%" height="100%">
 
 
 
