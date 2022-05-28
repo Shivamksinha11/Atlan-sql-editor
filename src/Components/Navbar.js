@@ -46,20 +46,20 @@ const Navbar = (props) => {
         >
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
             <li className="nav-item">
-              <a
+              <div
                 className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug cursor-pointer"
                 onClick={toggle2}
               >
               <span className="ml-2">Customers</span>
-              </a>
+              </div>
             </li>
             <li className="nav-item">
-              <a
+              <div
                 className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug cursor-pointer"
                 onClick={toggle}
               >
               <span className="ml-2">Products</span>
-              </a>
+              </div>
             </li>
           </ul>
         </div>
