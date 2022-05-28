@@ -2,6 +2,8 @@
 
 This Project is a front-end application of an online SQL editor built specifically to fulfill a task given by Atlan.
 
+### Page load time: less than 1.5 sec 
+
 ## Technologies used :-
 
 Following technologies were used for the completion of this project:

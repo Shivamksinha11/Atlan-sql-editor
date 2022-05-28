@@ -34,7 +34,7 @@ function App() {
           {(query === 1 || query === 2 || query === 3 || query === 4 || query === 5 || query === 6) && <FilterData showEmployees={showEmployees} showText={data} query={query}/> }
         </div>
 
-        <div className='flex w-full pt-1 font-bold text-blue-500 md:hidden items-center justify-center'><span>Made for </span><img src={logo} className='h-5 ml-2'/></div>
+        <div className='flex w-full pt-1 font-bold text-blue-500 md:hidden items-center justify-center'><span>Made for </span><img alt="..." src={logo} className='h-5 ml-2'/></div>
       </div>
     </>
   );
